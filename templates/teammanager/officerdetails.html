@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Sports Club Manager {{club.club_name}} Officers' Page{% endblock %}</title>
+</head>
+<body>
+<main>
+    {% block content %}
+        <h1>{{club.club_name}}: Officers' Page</h1>
+    {% endblock %}
+</main>
+</body>
+</html>

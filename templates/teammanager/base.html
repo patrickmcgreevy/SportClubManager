@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'teammanager/style.css' %}?{% now 'U' %}">
+<head>
+<meta charset="utf-8">
+  <title>{% block title %}Sports Club Manager{% endblock %}</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<div class="nav">
+  <ul>
+    <li>
+        <a href="{% url 'userclubs' %}"> My Clubs </a>
+        <a href="{% url 'clubshome' %}"> All Clubs </a>
+        <a href="{% url 'logout' %}"> Logout </a>
+    </li>
+  </ul>
+</nav>
+</div>
+{% endif %}
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

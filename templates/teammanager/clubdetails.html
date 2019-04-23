@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<!--{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'teammanager/style.css' %}?{% now 'U' %}">-->
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Sports Club Manager {{club.club_name}}{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block content %}
+    {% if user.is_authenticated%}
+    <!--<div class="nav">
+        <ul>
+        <li>
+            <a href="{% url 'userclubs' %}"> My Clubs </a>
+            <a href="{% url 'clubshome' %}"> All Clubs </a>
+            <a href="{% url 'logout' %}"> Logout </a>
+        </li>
+        </ul>
+    </nav>
+    </div>-->
+        <h1>{{club.club_name}}</h2>
+        {% if user in officers %}
+            <a href="{% url 'clubofficerdetails' club.id %}">Officers Page</a>
+        {% endif %}
+        <h2>Officers</h2>
+        <ul>
+            {% for officer in officers %}
+                <li>{{officer.get_username}}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Members</h2>
+        <ul>
+            {% for member in members %}
+                <li>{{member.get_username}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endblock %}
+  </main>
+</body>
+</html>
