@@ -1,0 +1,90 @@
+body {
+    /*background : rgb(185, 179, 179);*/
+    background: gray;
+}
+
+main {
+    margin-left: 16%;
+
+}
+
+.nav {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*width: 200px;*/
+    overflow: auto;
+    background-color: #f1f1f1;
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    }
+
+/* .nav li {
+    float: left
+} */
+    
+.nav li a {
+    /* display: inline-block; */
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    /*width: 200px;*/
+}
+
+/*.nav li a.active {
+    background-color: #4CAF50;
+    color: white;
+}*/
+
+.nav li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.teams {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.teams ul {
+    list-style-type: none;
+    /* margin-left: 25%; */
+    padding: 0;
+    width: 200px;
+    background-color: gray;
+}
+
+/*.teams li {
+    float: left;
+}*/
+
+.teams li a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: crimson
+    /* display: block;
+    color: black;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: crimson; */
+}
+
+.teams li a:hover{
+    background-color: #555;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: black
+}
+

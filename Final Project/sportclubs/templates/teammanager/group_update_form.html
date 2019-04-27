@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+<html>
+{% block content %}
+    <form method="post"> {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+
+    This a bitch. {{view.group_name}}
+    <ul>
+    {% for user in view.group_members %}
+        <li>{{ user.get_username }}</li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
+</html>

@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sports Club Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <br>Hi {{ user.username }}!
+  {% comment %} <p><a href="{% url 'logout' %}">logout</a></p> {% endcomment %}
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a> |
+  <a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}
